@@ -1,38 +1,104 @@
+* {
+  background-color: #1A1A1D;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 45px;
+  width: 550px;
+  height: 450px;
+  margin: 13% auto;
+  padding: 45px;
+  background-color: inherit;
+  border: 5px solid #6F2232;
+  border-radius: 15px;
+}
+
+.settingsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 450px;
+  height: 170px;
+  padding: 30px;
+  color: #6F2232;
+  font-size: 30px;
+  border: 3px solid #6F2232;
+  border-radius: 15px;
+}
+
+.settingsValue {
+  display: flex;
+  gap: 10px;
+}
+.settingsTitle {
+  display: inline-block;
+  width: 160px;
+}
+input[type="number"] {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #6F2232;
+  background-color: #C2CAD0;
+  border: 2px solid #6F2232;
+  border-radius: 5px;
+}
+
+.number {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: #6F2232;
+  padding-top: 10%;
+  width: 450px;
+  height: 170px;
+  border: 3px solid #6F2232;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+  padding: 25px;
+  width: 450px;
+  height: 150px;
+  border: 3px solid #6F2232;
+  border-radius: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn {
+  margin: 15px 10px;
+  color: #1A1A1D;
+  background-color: #6F2232;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 100px;
+  height: 70px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.disabled {
+  border: 3px solid #6F2232;
+  color: #1A1A1D;
+  background-color: #4E4E50;
+}
+
+.num-disabled {
+  border: 3px solid #4E4E50;
+  color: #4E4E50;
+
+}
+
+input[type="number"].error {
+  background-color: #E3AFBC;
 }
