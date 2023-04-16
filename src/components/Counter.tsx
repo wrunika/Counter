@@ -6,7 +6,7 @@ type CounterPropsType = {
 }
 
 export const Counter = (props: CounterPropsType) => {
-  const numberStyle = `number ${props.count===props.maxValue ? 'num-disabled' : props.count === 'Incorrect value!' ? 'num-disabled' : ''}`
+  const numberStyle = `number ${props.count===props.maxValue ? 'num-disabled' : typeof props.count === "string" ? 'num-disabled' : ''}`
   return(
     <div className={numberStyle}>
       {props.count}
