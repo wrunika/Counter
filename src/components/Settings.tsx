@@ -1,5 +1,7 @@
 import React from 'react';
 import {ChoosingValueInput} from "./ChoosingValueInput";
+import {useDispatch} from "react-redux";
+import {setMaxValueAC, setStartValueAC} from "../state/counter-reducer";
 
 type SettingsPropsType = {
     maxTitle: string
@@ -8,17 +10,24 @@ type SettingsPropsType = {
     maxInputValue: number
     getStartInputValue: (s: string)=>void
     getMaxInputValue: (s: string)=>void
+    onInputChange: ()=>void
 }
 export const Settings = (props: SettingsPropsType) => {
 
+    const dispatch = useDispatch()
+
     const onChangeMaxHandler = (value: string) => {
-        //debugger
-        props.getMaxInputValue(value)
+        debugger
+        //props.getMaxInputValue(value)
+        dispatch(setMaxValueAC(value))
+        props.onInputChange()
     }
 
     const onChangeStartHandler = (value: string) => {
-        //debugger
-        props.getStartInputValue(value)
+        debugger
+        //props.getStartInputValue(value)
+        dispatch(setStartValueAC(value))
+        props.onInputChange()
     }
 
     const errorStartClass = props.startInputValue < 0 ? 'error' : props.startInputValue === props.maxInputValue ? 'error' : '';
@@ -41,25 +50,3 @@ export const Settings = (props: SettingsPropsType) => {
         </div>
     );
 };
-
-
-
-
-/*
-type ChoosingValueType = {
-    title: string
-    value: string
-    onChangeHandler: (s: string)=>void
-    className: string
-}
-export const ChoosingValueInput = (props: ChoosingValueType) => {
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      props.onChangeHandler(e.currentTarget.value)
-    }
-  return (
-      <div className={'settingsValue'}>
-          <span className={'settingsTitle'}>{props.title}</span>
-          <input value={props.value} onChange={ onChangeHandler } className={props.className} type="number"/>
-      </div>
-  )
-}*/
