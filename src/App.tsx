@@ -5,6 +5,7 @@ import {Button} from './components/Button';
 import {Settings} from "./components/Settings";
 
 
+
 type StateType = {
     start: number
     max: number
